@@ -1,0 +1,43 @@
+﻿@model IEnumerable<vinmart.DonViTinh>
+
+@{
+    ViewBag.Title = "Don vi tinh";
+}
+
+<h2 style="color:blue;font-style:oblique">Danh sach don vi tinh</h2>
+
+<p>
+    <i class="fa fa-newspaper-o"></i>
+    @Html.ActionLink("Tao moi", "Create")
+</p>
+<table class="table" border="1">
+    <tr style="color:red;font-size:15px;font-style:oblique">
+        <th>
+            @Html.DisplayNameFor(model => model.MaDVT)
+        </th>
+        <th>s
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaDVT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten)
+    </td>
+    <td>
+        <i class="fa fa-edit" style="color:blue;"></i>
+        @Html.ActionLink("Thay doi", "Edit", new { id = item.MaDVT }) |
+        <i class="fa fa-deaf" style="color:blue;"></i>
+        @Html.ActionLink("Chi tiet", "Details", new { id = item.MaDVT }) |
+        <i class="fa fa-remove" style="color:blue;"></i>
+        @Html.ActionLink("Xoa", "Delete", new { id = item.MaDVT })
+    </td>
+</tr>
+}
+
+</table>

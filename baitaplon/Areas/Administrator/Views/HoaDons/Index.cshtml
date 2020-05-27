@@ -1,0 +1,73 @@
+﻿@model IEnumerable<vinmart.HoaDon>
+
+@{
+    ViewBag.Title = "Hoa Don";
+}
+
+<h2 style="color:blue;font-style:oblique">Danh sach Hoa Don</h2>
+
+<p>
+    <i class="fa fa-newspaper-o"></i>
+    @Html.ActionLink("Tao moi", "Create")
+</p>
+<table class="table" border="1">
+    <tr style="color:red;font-size:15px;font-style:oblique">
+        <th>
+            @Html.DisplayNameFor(model => model.MaHD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHang.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVien.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiDiemLap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTienPhaiTra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MucGiam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemThuong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaHD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KhachHang.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NhanVien.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ThoiDiemLap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TongTienPhaiTra)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MucGiam)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiemThuong)
+    </td>
+    <td>
+        <i class="fa fa-edit" style="color:blue;"></i>
+        @Html.ActionLink("Thay doi", "Edit", new { id = item.MaHD }) |
+        <i class="fa fa-deaf" style="color:blue;"></i>
+        @Html.ActionLink("Chi Tiet", "Details", new { id = item.MaHD }) |
+        <i class="fa fa-remove" style="color:blue;"></i>
+        @Html.ActionLink("Xoa", "Delete", new { id = item.MaHD })
+    </td>
+</tr>
+}
+
+</table>

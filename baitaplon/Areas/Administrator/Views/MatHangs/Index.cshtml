@@ -1,0 +1,106 @@
+﻿@model IEnumerable<vinmart.MatHang>
+
+@{
+    ViewBag.Title = "Mat Hang";
+}
+
+<h2  style="color:blue;font-style:oblique">Danh sach ma mat hang</h2>
+
+<p>
+    @Html.ActionLink("Tao moi", "Create")
+</p>
+<table class="table" border="1">
+    <tr style="color:red;font-size:15px;font-style:oblique">
+        <th>
+            @Html.DisplayNameFor(model => model.MaMH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonViTinh.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiHang.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySanXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaMua)
+        </th>
+     
+    
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayHetHan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhMinhHoa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaMH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonViTinh.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoaiHang.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgaySanXuat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuongNhap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuongBan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GiaBan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GiaMua)
+    </td>
+  
+ 
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayNhap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayHetHan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HinhMinhHoa)
+    </td>
+    <td>
+        <i class="fa fa-edit" style="color:blue;"></i>
+        @Html.ActionLink("Thay doi", "Edit", new { id = item.MaMH }) |
+        <i class="fa fa-deaf" style="color:blue;"></i>
+        @Html.ActionLink("Chi tiet", "Details", new { id = item.MaMH }) |
+        <i class="fa fa-remove" style="color:blue;"></i>
+        @Html.ActionLink("Xoa", "Delete", new { id = item.MaMH })
+    </td>
+</tr>
+}
+
+</table>

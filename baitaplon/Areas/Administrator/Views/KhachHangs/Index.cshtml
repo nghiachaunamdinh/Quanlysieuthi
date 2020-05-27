@@ -1,0 +1,61 @@
+﻿@model IEnumerable<vinmart.KhachHang>
+
+@{
+    ViewBag.Title = "Khach Hang";
+}
+
+<h2 style="color:blue;font-style:oblique">Danh sach khach hang</h2>
+
+<p>
+    <i class="fa fa-newspaper-o"></i>
+    @Html.ActionLink("Tao moi", "Create")
+</p>
+<table class="table" border="1">
+    <tr style="color:red;font-size:15px;font-style:oblique">
+        <th>
+            @Html.DisplayNameFor(model => model.MaKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemThuong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaKH)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DienThoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiemThuong)
+    </td>
+    <td>
+        <i class="fa fa-edit" style="color:blue;"></i>
+        @Html.ActionLink("Thay doi", "Edit", new { id = item.MaKH }) |
+        <i class="fa fa-deaf" style="color:blue;"></i>
+        @Html.ActionLink("Chi tiet", "Details", new { id = item.MaKH }) |
+        <i class="fa fa-remove" style="color:blue;"></i>
+        @Html.ActionLink("Xoa", "Delete", new { id = item.MaKH })
+    </td>
+</tr>
+}
+
+</table>

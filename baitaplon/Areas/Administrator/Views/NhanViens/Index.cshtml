@@ -1,0 +1,102 @@
+﻿@model IEnumerable<vinmart.NhanVien>
+
+@{
+    ViewBag.Title = "Nhan vien";
+}
+
+<h2 style="color:blue;font-style:oblique">Index</h2>
+
+<p>
+    
+    @Html.ActionLink("Tao moi", "Create")
+</p>
+<table class="table"  border="1">
+    <tr style="color:red;font-size:15px;font-style:oblique">
+        <th>
+            @Html.DisplayNameFor(model => model.MaNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChucVu.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CMND)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pwd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.allowed)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaNV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ChucVu.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgaySinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CMND)
+    </td>
+   
+    <td>
+        @Html.DisplayFor(modelItem => item.DienThoai)
+    </td>
+   
+   
+    <td>
+        @Html.DisplayFor(modelItem => item.Username)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Pwd)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.avatar)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.allowed)
+    </td>
+    <td>
+        <i class="fa fa-edit" style="color:blue;"></i>
+        @Html.ActionLink("Thay doi", "Edit", new { id = item.MaNV }) |
+        <i class="fa fa-deaf" style="color:blue;"></i>
+        @Html.ActionLink("Chi tiet", "Details", new { id = item.MaNV }) |
+        <i class="fa fa-remove" style="color:blue;"></i>
+        @Html.ActionLink("Xoa", "Delete", new { id = item.MaNV })
+    </td>
+</tr>
+}
+
+</table>

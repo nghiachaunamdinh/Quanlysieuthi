@@ -1,0 +1,72 @@
+﻿@model vinmart.HoaDon
+
+@{
+    ViewBag.Title = "Xoa";
+}
+
+<h2 style="color:blue;font-style:oblique">Xoa</h2>
+
+<h3>Ban co muon xoa khong?</h3>
+<div>
+    <h4>Hoa Don</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHang.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiDiemLap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiDiemLap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTienPhaiTra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTienPhaiTra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MucGiam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MucGiam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemThuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemThuong)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lai", "Index")
+        </div>
+    }
+</div>

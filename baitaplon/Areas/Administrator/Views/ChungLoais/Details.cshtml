@@ -1,0 +1,26 @@
+﻿@model vinmart.ChungLoai
+
+@{
+    ViewBag.Title = "Chi Tiet";
+}
+
+<h2 style="color:blue;font-style:oblique">Chi tiet</h2>
+
+<div>
+    <h4>Chung Loai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Thay doi", "Edit", new { id = Model.MaCL }) |
+    @Html.ActionLink("Quay lai", "Index")
+</p>

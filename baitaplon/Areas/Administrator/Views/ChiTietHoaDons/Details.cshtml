@@ -1,0 +1,42 @@
+﻿@model vinmart.ChiTietHoaDon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietHoaDon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HoaDon.MaNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoaDon.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatHang.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatHang.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

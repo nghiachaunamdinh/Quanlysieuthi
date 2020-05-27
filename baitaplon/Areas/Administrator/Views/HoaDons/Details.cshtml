@@ -1,0 +1,66 @@
+﻿@model vinmart.HoaDon
+
+@{
+    ViewBag.Title = "Chi tiet";
+}
+
+<h2 style="color:blue;font-style:oblique">Chi tiet</h2>
+
+<div>
+    <h4>HoaDon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHang.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThoiDiemLap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThoiDiemLap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTienPhaiTra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTienPhaiTra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MucGiam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MucGiam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiemThuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiemThuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Thay doi", "Edit", new { id = Model.MaHD }) |
+    @Html.ActionLink("Quay lai", "Index")
+</p>

@@ -1,0 +1,32 @@
+﻿@model vinmart.ChungLoai
+
+@{
+    ViewBag.Title = "Xoa";
+}
+
+<h2 style="color:blue;font-style:oblique">Xoa</h2>
+
+<h3>Ban co muon xoa khong?</h3>
+<div>
+    <h4>ChungLoai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lai", "Index")
+        </div>
+    }
+</div>
